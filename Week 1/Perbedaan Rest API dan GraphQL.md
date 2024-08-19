@@ -13,7 +13,8 @@ b.  Stateless:
 Setiap permintaan dari klien ke server harus memuat semua informasi yang diperlukan untuk memproses permintaan tersebut. Server tidak menyimpan informasi tentang status permintaan sebelumnya.
 
 c. Berbasis Entitas: 
-REST API berfokus pada entitas (entity) yang diidentifikasi oleh URL (Uniform Resource Locator). Misalnya, https://api.example.com/users mungkin mewakili daftar pengguna.
+REST API berfokus pada entitas (entity) yang diidentifikasi oleh URL (Uniform Resource Locator). Dengan menggunakan URL untuk setiap entitas, REST API memungkinkan klien (seperti aplikasi web atau mobile) untuk dengan mudah melakukan operasi seperti mengambil, menambah, mengubah, atau menghapus data dari server. 
+Misalnya, Menambah pengguna baru: POST https://api.example.com/users memungkinkan Anda mengirim data pengguna baru ke server.
 
 d. Format Data: 
 REST API umumnya menggunakan format data seperti JSON (JavaScript Object Notation) atau XML (Extensible Markup Language) untuk mengirim dan menerima data.
