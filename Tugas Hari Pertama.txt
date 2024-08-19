@@ -17,6 +17,9 @@ b.  Stateless: Setiap permintaan dari klien ke server harus memuat semua informa
 c. Berbasis Entitas: REST API berfokus pada entitas (entity) yang diidentifikasi oleh URL (Uniform Resource Locator). Misalnya, https://api.example.com/users mungkin mewakili daftar pengguna.
 d. Format Data: REST API umumnya menggunakan format data seperti JSON (JavaScript Object Notation) atau XML (Extensible Markup Language) untuk mengirim dan menerima data.
 
+GraphQL:
+GraphQL API dikembangkan oleh Facebook, dengan tujuan untuk mendapatkan sebuah API yang lebih fleksibel dan efisien. Pendekatan ini dapat menyelesaikan permasalahan yang ada sekarang dan juga permasalahan yang dihadapi pengembang pada saat mengembangkan API dengan menggunakan pendekatan REST API. Dirancang untuk memberikan lebih banyak kontrol kepada klien dalam hal data yang mereka terima dari server. 
+Berikut beberapa tentang GraphQL:
 
 
 
