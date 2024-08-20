@@ -4,34 +4,39 @@ Open System Interconnection atau OSI adalah sebuah kerangka konseptual yang dig
 
 ![image](https://github.com/user-attachments/assets/2deedd06-5fbe-428a-a9d3-db5dc4fd78c6)
 
-1. Application Layer (Lapisan Ke - 7)
+1. Application Layer (Lapisan Ke - 7)                                                                                             
+
    Application Layer adalah bagian dari jaringan yang paling dekat dengan pengguna. Di sinilah terjadinya pengguna berinteraksi      langsung dengan aplikasi yang memanfaatkan jaringan, seperti web browser atau email. Lapisan ini bertanggung jawab untuk          mengatur bagaimana aplikasi menggunakan jaringan dan memastikan bahwa aplikasi dapat berfungsi dengan baik menggunakan sumber     daya yang ada di jaringan.
    
    Jika terjadi masalah saat aplikasi mencoba menggunakan jaringan, lapisan ini juga bisa memberikan pesan kesalahan kepada          pengguna.
 
    Beberapa contoh layanan dan protokol yang beroperasi pada lapisan ini adalah HTTP (digunakan untuk browsing web), SMTP            (digunakan untuk email), dan FTP (digunakan untuk transfer file).
    
-2. Presentation Layer (Lapisan Ke - 6)
-   Presentation Layer bertugas untuk mengubah data dari aplikasi menjadi format yang bisa ditransmisikan melalui jaringan.           Lapisan ini memastikan bahwa data yang dikirimkan oleh aplikasi di satu perangkat bisa dipahami oleh aplikasi di perangkat        lain.Fungsi utama lapisan ini termasuk mengubah format data, mengenkripsi (mengamankan) data, dan mengompresi (mengurangi         ukuran) data.
-   
-   Beberapa contoh protokol di lapisan ini adalah SSL/TLS (yang digunakan untuk keamanan), serta format data seperti JPEG, PNG,      dan ASCII. Jadi, lapisan ini bertanggung jawab memastikan data yang dikirim bisa dibaca dengan benar dan aman oleh perangkat      lain.
+3. Presentation Layer (Lapisan Ke - 6)
 
-3. Session Layer (Lapisan Ke - 5)
+   Presentation Layer bertugas untuk mengubah data dari aplikasi menjadi format yang bisa ditransmisikan melalui jaringan.           Lapisan ini memastikan bahwa data yang dikirimkan oleh aplikasi di satu perangkat bisa dipahami oleh aplikasi di perangkat        lain.Fungsi utama lapisan ini termasuk mengubah format data, mengenkripsi (mengamankan) data, dan mengompresi (mengurangi         ukuran) data.
+   Beberapa contoh protokol di lapisan ini adalah SSL/TLS (yang digunakan untuk keamanan), serta format data seperti JPEG, PNG,      dan ASCII. Jadi, lapisan ini bertanggung jawab memastikan data yang dikirim bisa dibaca dengan benar dan aman oleh perangkat      lain.
+   
+4. Session Layer (Lapisan Ke - 5)
+   
    Session Layer adalah lapisan yang bertanggung jawab untuk mengatur, mengelola, dan mengakhiri sesi komunikasi antara dua          perangkat di jaringan. Ini memastikan bahwa komunikasi bisa dimulai, diatur dengan baik, dan diakhiri dengan benar.
    Beberapa protokol yang bekerja di lapisan ini adalah NFS (untuk berbagi file di jaringan), SMB (untuk berbagi file di jaringan    Windows), dan RTP (untuk streaming media).
    
-4. Transport Layer (Lapisan Ke - 4)
+5. Transport Layer (Lapisan Ke - 4)
+  
    Transport Layer bertugas untuk membagi data menjadi paket-paket kecil dan memberi nomor pada setiap paket sehingga bisa           disusun kembali dengan benar saat tiba di tujuan. Di lapisan ini, protokol seperti TCP dan UDP digunakan untuk mengirim data.
     * TCP (Transmission Control Protocol) memastikan bahwa setiap paket data sampai dengan benar dan lengkap. Jika ada paket yang       hilang atau rusak, TCP akan mengirimkannya kembali.
     * UDP (User Datagram Protocol) lebih cepat, tetapi tidak menjamin semua paket akan sampai.
       Lapisan ini juga memastikan data dikirimkan tanpa kesalahan, mengatur aliran data, dan memeriksa serta memperbaiki                kesalahan yang mungkin terjadi.
       
-5. Network Layer (Lapisan Ke – 3)
-   Network Layer bertanggung jawab untuk menambahkan header pada paket data yang berisi informasi alamat IP, termasuk IP pengirim    dan IP tujuan. Header ini membantu memastikan bahwa data dikirim ke tempat yang benar.
+6. Network Layer (Lapisan Ke – 3)
+
+   Network Layer bertanggung jawab untuk menambahkan header pada paket data yang berisi informasi alamat IP, termasuk IP             pengirim dan IP tujuan. Header ini membantu memastikan bahwa data dikirim ke tempat yang benar.
    Lapisan ini juga mengatur proses routing, yaitu memilih jalur terbaik untuk mengirimkan data melalui jaringan yang berbeda,       dengan bantuan perangkat seperti router dan switch pada lapisan ini.
    Contoh dari protokol dan perangkat di lapisan ini adalah IP (Internet Protocol) untuk pengalamatan, router untuk mengarahkan      data, dan penggunaan alamat IP untuk mengidentifikasi perangkat di jaringan.
    
-6. Data-Link-Layer (Lapisan Ke – 2)
+7. Data-Link-Layer (Lapisan Ke – 2)
+
    Data Link Layer bertanggung jawab untuk transfer data antara dua perangkat yang terhubung langsung. Lapisan ini mengatur          bagaimana data dibingkai dalam format yang disebut frame, serta mendeteksi dan memperbaiki kesalahan yang mungkin terjadi pada    lapisan fisik.
 
    Komponen dan Protokol:
@@ -44,7 +49,8 @@ Open System Interconnection atau OSI adalah sebuah kerangka konseptual yang dig
       - Switch dan Bridge: Perangkat yang menghubungkan dan mengarahkan data dalam jaringan.
     Lapisan ini memastikan data dikirim dengan benar antar perangkat dan mengatur bagaimana perangkat seperti hub, repeater,          switch, dan bridge beroperasi pada level ini.
   
-7. Physical Layer (Lapisan Ke – 1)
+8. Physical Layer (Lapisan Ke – 1)
+
    Physical Layer adalah lapisan yang menangani semua aspek fisik dari koneksi jaringan. Ini termasuk kabel, sinyal, konektor,       dan media transmisi yang digunakan untuk mengirimkan data.
    Contoh perangkat:
       - Kabel Ethernet
@@ -111,55 +117,76 @@ Cara Memahami OSI Layer :
 Memahami OSI Layer dengan menggunakan analogi mengirim surat 
 Analogi Mengirim Surat
 1. Application Layer (Lapisan Aplikasi)
+
    Apa yang terjadi:
    Menulis surat dengan konten yang ingin di kirimkan, misalnya undangan untuk acara.
+
    Analoginya:
    Ini adalah aplikasi yang di gunakan untuk menulis pesan, seperti email atau aplikasi chat.
 2. Presentation Layer (Lapisan Presentasi)
+
    Apa yang Terjadi:
    Setelah menulis surat, lalu memasukkan surat ke dalam amplop dan menulis informasi tambahan seperti format                        yang diinginkan (misalnya, apakah amplopnya berwarna atau ukuran khusus).
+
    Analoginya:
    Ini adalah tahap di mana data disiapkan dalam format yang sesuai untuk penerima. Misalnya, jika surat  harus                      dienkripsi, ini dilakukan di lapisan ini.
 3. Session Layer (Lapisan Sesi)
+
    Apa yang Terjadi:
    Kemudian menyiapkan dan mengelola sesi komunikasi dengan kantor pos, memastikan bahwa mereka tahu surat ini                       bagian dari kiriman yang lebih besar atau sesi tertentu.
+
    Analoginya:
    Ini mengatur komunikasi dan memastikan bahwa koneksi antara pengirim dan penerima tetap aktif selama proses                       pengiriman.
 4. Transport Layer (Lapisan Transport)
+
    Apa yang Terjadi:
    lalu, memberikan amplop kepada kantor pos, yang akan memutuskan bagaimana cara terbaik untuk mengirimkan surat                    itu dan memastikan bahwa surat sampai dengan aman.
+
    Analoginya:
    Ini memastikan bahwa data dibagi menjadi bagian-bagian kecil jika diperlukan dan dikirim dengan cara yang tepat.                  Misalnya, TCP memastikan pengiriman yang andal.
 5. Network Layer (Lapisan Jaringan)
+
    Apa yang Terjadi:
    Kantor pos memutuskan rute terbaik untuk mengirimkan surat ke alamat tujuan, melalui berbagai kantor pos                          jika diperlukan.
+
    Analoginya:
    Ini mengatur rute dan alamat tujuan untuk data, seperti memilih jalan terbaik melalui jaringan untuk mencapai server              tujuan.
 6. Data Link Layer (Lapisan Data Link)
+
    Apa yang Terjadi:
    Surat tiba di kantor pos lokal, dan kantor pos memastikan bahwa surat tersebut dikirim ke tempat yang tepat di                    dalam kantor pos lokal itu.
+
    Analoginya:
    Ini memastikan bahwa data yang dikirim melalui media transmisi lokal (seperti kabel) sampai ke perangkat yang benar               dalam jaringan lokal.
 7. Physical Layer (Lapisan Fisik)
+
    Apa yang Terjadi:
    Surat akhirnya dikirim melalui truk atau kurir, bergerak secara fisik melalui berbagai media (jalan, rel, dll.)                   untuk sampai ke penerima.
+
    Analoginya:
    Ini adalah media fisik yang digunakan untuk mengirimkan sinyal data, seperti kabel Ethernet atau gelombang radio.
 
 Proses Penerimaan Surat:
 1. Physical Layer (Lapisan Fisik):
+
    Surat diterima secara fisik oleh penerima.
 2. Data Link Layer (Lapisan Data Link):
+
    Kantor pos penerima memeriksa dan memastikan surat sampai dalam kondisi baik.
 3. Network Layer (Lapisan Jaringan):
+
    Surat diterima dan dipastikan berada di alamat yang benar.
 4. Transport Layer (Lapisan Transport):
+
    Surat disusun dengan benar dan siap untuk diserahkan.
 5. Session Layer (Lapisan Sesi):
+
    Sesi komunikasi antara kantor pos dan penerima diatur untuk memastikan surat diterima.
 6. Presentation Layer (Lapisan Presentasi):
-    Amplop dibuka dan surat dibaca dalam format yang diinginkan.
+
+   Amplop dibuka dan surat dibaca dalam format yang diinginkan.
 7. Application Layer (Lapisan Aplikasi):
+
    Surat diterima dan dibaca oleh penerima.
 
 
