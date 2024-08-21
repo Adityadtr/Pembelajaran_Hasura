@@ -125,6 +125,9 @@ Untuk melihat struktur direktori dan file yang telah dibuat, gunakan perintah tr
 ```
 tree Project_Sistem_Kampus
 ```
+Untuk Hasil Output dapat lihat dibawah ini :
+
+![image](https://github.com/user-attachments/assets/2018ccc0-3806-4dc4-b2e1-c2227bcba106)
 
 # Mengecek Kapasitas RAM
 
@@ -137,12 +140,21 @@ Perintah free menampilkan informasi mengenai penggunaan memori di sistem.
 
 Opsi -h (human-readable) membuat output lebih mudah dibaca dengan menampilkan ukuran dalam format yang lebih mudah dipahami (KB, MB, GB).
 
+Hasil output :
+
+![image](https://github.com/user-attachments/assets/9e30279b-b6ca-4a72-8e8e-f47ec0e79747)
+
 Untuk menampilkan informasi lebih rinci dapat menggunakan perintah:
 
 ```
 cat /proc/meminfo
 ```
 Perintah ini menampilkan informasi rinci tentang memori sistem, termasuk total kapasitas RAM, penggunaan, buffer, cache, dan swap.
+
+Hasil Output:
+
+![image](https://github.com/user-attachments/assets/381f9f5e-b541-475a-bf74-b7eb711ff721)
+
 
 # Mengecek Kapasitas CPU
 
@@ -153,12 +165,22 @@ lscpu
 ```
 Perintah lscpu menampilkan informasi detail mengenai arsitektur CPU, jumlah core, thread, kecepatan CPU, dan banyak lagi.
 
+Hasil Output:
+
+![image](https://github.com/user-attachments/assets/30bb4a43-b7e0-463c-bd40-6b4402ddb9ff)
+
+
 Untuk menampilkan informasi lebih rinci dapat menggunakan perintah:
 
 ```
 cat /proc/cpuinfo
 ```
 Perintah ini menampilkan informasi rinci mengenai setiap core CPU, termasuk model, kecepatan, dan cache.
+
+Hasil Output:
+
+![image](https://github.com/user-attachments/assets/ee72cce8-8397-4ba4-8294-dfd06af85b4d)
+
 
 # Mengecek Kecepatan Hard Disk 
 
@@ -167,9 +189,13 @@ Untuk mengecek kecepatan Baca/Tulis Hard Disk, dapat menggunakan perintah `hdpar
 ```
 sudo hdparm -Tt /dev/sda
 ```
-Perintah ini akan melakukan benchmark pada hard disk yang berada di /dev/sda. Gantilah /dev/sda dengan lokasi partisi hard disk yang ingin kamu cek.
+Perintah ini akan melakukan benchmark pada hard disk yang berada di /dev/sda.
 
 Opsi -T mengukur kecepatan akses cache (buffered), sedangkan -t mengukur kecepatan baca langsung dari disk (disk read).
+
+Hasil Output:
+
+![image](https://github.com/user-attachments/assets/e72be022-5f50-45e9-9a5f-2beae8477e87)
 
 
 
