@@ -44,24 +44,82 @@ Berbeda dengan REST API yang mungkin memiliki banyak endpoint untuk berbagai ope
 5. Real-time Updates:
 GraphQL memiliki fitur langganan (subscription) yang memungkinkan klien menerima pembaruan secara real-time ketika data di server berubah.
 
+# Endpoint
+
+Endpoint (Titik Akhir)
+
+REST API:
+
+Multi-endpoint: 
+
+Setiap jenis sumber daya memiliki endpoint sendiri. Misalnya, untuk mendapatkan data pengguna, produk, atau pesanan,
+biasanya harus membuat permintaan ke endpoint yang berbeda seperti /users, /products, atau /orders.
+
+Contoh: 
+
+       - GET /api/users/1 untuk mendapatkan data pengguna dengan ID 1.
+       - GET /api/products/5 untuk mendapatkan data produk dengan ID 5.
+       - GET /api/orders/123 untuk mendapatkan data pesanan dengan ID 123.
+
+GraphQL:
+
+Single-endpoint: 
+
+Hanya ada satu endpoint untuk semua permintaan. Klien mengirimkan query yang menentukan data apa saja yang dibutuhkan, 
+dan server merespons dengan data yang diminta.
+
+Contoh: 
+
+POST request ke endpoint /graphql dengan query yang menentukan data apa saja yang dibutuhkan:
+
+```
+         {
+           user(id: 1) {
+             name
+             email
+           }
+           product(id: 5) {
+             name
+             price
+           }
+           order(id: 123) {
+             total
+             status
+           }
+         }
+```
+
+Server merespons dengan data yang spesifik sesuai dengan query.
+
+
 # Perbedaan Rest API dan GraphQL
 
 1. Segi Definisi:
+   
 REST: seperangkat aturan yang mendefinisikan pertukaran data terstruktur antara klien dan server.
+
 GraphQL: merupakan bahasa kueri, gaya arsitektur, dan seperangkat alat untuk membuat dan memanipulasi API.
 
 2. Segi Kecocokan:
+
 REST: bagus untuk sumber data sederhana di mana resource didefinisikan dengan baik.
+
 GraphQL: bagus untuk sumber data besar, kompleks, dan saling terkait.
 
 3. Segi Query:
+   
 REST API: Client harus melakukan beberapa permintaan ke berbagai endpoint untuk mendapatkan data yang berbeda. 
+
 GraphQL: Client dapat melakukan satu query untuk mendapatkan semua data yang dibutuhkan, dan data tersebut dikembalikan dalam satu respons.
 
 4. Dari Segi Fleksibilitas Data:
+   
 REST API: Respons seringkali berisi data lebih dari yang dibutuhkan karena format data diatur oleh server.
+
 GraphQL: Klien memiliki kontrol penuh atas data yang diterima dengan menentukan secara eksplisit apa yang dibutuhkan.
 
 5. Dari Segi Pengambilan Data:
+   
 REST API: sering kali mengharuskan client untuk mengakses beberapa titik akhir(Endpoint) untuk mengumpulkan data. Mereka menggunakan hierarchies route atau titik akhir (Endpoint), yang dapat mempersulit pengambilan data.
+
 GraphQL: memungkinkan client untuk cukup mengirim kueri dengan persyaratan data mereka ke server, dan server merespons dengan objek JSON. JSON adalah format yang sangat umum digunakan untuk mengirimkan data antara server dan klien karena mudah dibaca dan diproses oleh aplikasi.
