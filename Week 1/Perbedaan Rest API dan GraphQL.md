@@ -15,6 +15,8 @@ b.  Stateless:
 
 Setiap permintaan dari klien ke server harus memuat semua informasi yang diperlukan untuk memproses permintaan tersebut. Server tidak menyimpan informasi tentang status permintaan sebelumnya.
 
+Misalnya, jika aplikasi klien ingin mengakses data pengguna, klien harus mengirimkan semua informasi yang diperlukan (seperti identitas pengguna) dalam setiap permintaan. Server tidak akan mengingat klien tersebut dari permintaan sebelumnya; server hanya akan memproses permintaan saat itu berdasarkan informasi yang dikirim.
+
 c. Berbasis Entitas: 
 
 REST API berfokus pada entitas (entity) yang diidentifikasi oleh URL (Uniform Resource Locator). Dengan menggunakan URL untuk setiap entitas, REST API memungkinkan klien (seperti aplikasi web atau mobile) untuk dengan mudah melakukan operasi seperti mengambil, menambah, mengubah, atau menghapus data dari server. 
