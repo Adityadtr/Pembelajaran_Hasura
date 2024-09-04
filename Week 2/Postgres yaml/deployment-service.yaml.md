@@ -1,3 +1,17 @@
+# deployment-service.yaml
+
+File ini digunakan untuk mendefinisikan sebuah Deployment dan Service di Kubernetes.
+
+Deployment: 
+
+Mengelola penyebaran aplikasi di dalam cluster Kubernetes, seperti menentukan berapa banyak replika yang dijalankan, gambar (image) kontainer yang digunakan, variabel lingkungan, dan sumber daya yang dialokasikan untuk aplikasi tersebut.
+
+Service: 
+
+Mengatur bagaimana aplikasi diakses oleh pengguna atau aplikasi lain, baik di dalam maupun di luar cluster. Service memberikan alamat IP tetap (ClusterIP, NodePort, atau LoadBalancer) dan menyeimbangkan beban antar pod yang terkait dengan deployment.
+
+Lebih singkatnya: `deployment-service.yaml` digunakan untuk mengatur bagaimana aplikasi berjalan dan diakses dalam cluster
+
 # Analisa deployment-service.yaml pada postgres
 
 File yaml :
