@@ -1,3 +1,15 @@
+# pvc.yaml
+
+File ini digunakan untuk membuat `PersistentVolumeClaim` (PVC) di Kubernetes.
+
+`PersistentVolumeClaim` (PVC): 
+
+Sebuah permintaan penyimpanan dari aplikasi yang berjalan di Kubernetes. PVC memungkinkan aplikasi untuk mendapatkan akses ke penyimpanan yang stabil dan persisten (data tidak hilang meskipun pod dimatikan atau di-restart).
+
+PVC mendefinisikan ukuran penyimpanan, mode akses (misalnya, hanya bisa dibaca atau ditulis), dan jenis penyimpanan yang dibutuhkan aplikasi.
+
+Lebih singkatnya : `pvc.yaml` digunakan untuk memastikan aplikasi memiliki akses ke penyimpanan yang dibutuhkan.
+
 # Analisa pvc.yaml pada postgres
 
 File Yaml:
@@ -16,7 +28,9 @@ Penjelasan:
 
 `kind` menunjukkan jenis objek yang akan dibuat. Di sini, jenis objeknya adalah `PersistentVolumeClaim`.
 
-`PersistentVolumeClaim` (PVC) adalah permintaan untuk menyewa `PersistentVolume` (PV) di Kubernetes. `PVC` digunakan oleh Pod untuk menyimpan data yang membutuhkan penyimpanan tetap, bahkan ketika Pod dihentikan atau dihapus
+`PersistentVolumeClaim` (PVC) adalah permintaan untuk mengalokasikan atau meminta akses ke `PersistentVolume` (PV) di Kubernetes. 
+
+`PVC` digunakan oleh Pod untuk menyimpan data yang membutuhkan penyimpanan tetap, bahkan ketika Pod dihentikan atau dihapus
 
 ```
 metadata:
