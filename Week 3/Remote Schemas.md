@@ -20,11 +20,19 @@ GraphQL Service URL : http://10.100.14.10:8989/query
 
 Tetapi ada eror, dikarenakan field di hasura schemas saya memiliki field users yang sama dengan hasura schemas todographql, maka dapat memberikan penambahan root fields namespace nya:
 
-dengan mengklik graphql customizations dan isi root fields namespacesnya:
+dengan mengklik graphql customizations dan isi root fields namespacesnya: 
 
 ![image](https://github.com/user-attachments/assets/72e785d5-f006-4ae7-a965-f02b2fea4641)
 
+isilah : 
+
+root fields namespaces: todosRemote
+
 Kemudian save dengan mengeklik add remote schema:
+
+![image](https://github.com/user-attachments/assets/8a4bb55d-a9b2-421f-ba74-38c811e040de)
+
+schemas todosGraphQL berhasil di remote 
 
 # Integrasi Remote Schemas springboot di HASURA
 
