@@ -57,6 +57,52 @@ Hasil Output:
 
 ![image](https://github.com/user-attachments/assets/8188bc88-f88f-452a-8c98-cde8c0bd275e)
 
+# Menampilkan emiten saham dari data stocks melalui query
+
+Mengambil Semua Emiten Saham (Get Multiple Data):
+
+Query ini mengambil seluruh data saham yang ada.
+
+```
+query {
+  stocks {
+    id
+    emiten_name
+    stock_symbol
+    stock_price
+    quantity
+    total_price
+    created_at
+  }
+}
+```
+Hasil Output:
+
+![image](https://github.com/user-attachments/assets/b1f47924-6075-4484-8d1c-a68032674c67)
+
+Dapat juga melakukan pengambilan satu Emiten Saham (Get Single Data):
+
+Ini mengambil satu saham berdasarkan ID
+
+```
+query {
+  stocks(where: {id: {_eq: 5}}) {
+    id
+    emiten_name
+    stock_symbol
+    stock_price
+    quantity
+    total_price
+    created_at
+  }
+}
+```
+Hasil Output:
+
+![image](https://github.com/user-attachments/assets/66530ed7-b2ff-456b-93c0-37680efe7f4b)
+
+![image](https://github.com/user-attachments/assets/ff5bf409-fca3-4c5c-8cd0-c8eac8b7eb78)
+
 # Membuat Pendaftaran Pengguna Baru (user)
 
 Single Data Insert (Pendaftaran Satu User) : 
@@ -109,52 +155,346 @@ dapat melihat output order dari kolom pengguna:
 
 ![image](https://github.com/user-attachments/assets/26ceeb82-3382-4bc7-9276-170e5ce0bdeb)
 
+# Mengupdate Data Pengguna
 
-# Menampilkan emiten saham dari data stocks melalui query
+Untuk melakukan update data pengguna dapat mengupdate menggunakan mutation:
 
-Mengambil Semua Emiten Saham (Get Multiple Data):
-
-Query ini mengambil seluruh data saham yang ada.
+1. Update nama pengguna melalui id dengan menggunakan where
 
 ```
-query {
-  stocks {
-    id
-    emiten_name
-    stock_symbol
-    stock_price
-    quantity
-    total_price
-    created_at
+mutation MyMutation {
+  update_users(
+    where: { id: { _eq: 6 } },  # Kondisi untuk memilih berdasarkan id
+    _set: { name: "Sari Ayu" }  # Data yang di-update
+  ) {
+    affected_rows
+    returning {
+      id
+      name
+      email
+    }
+  }
+}
+```
+2. Update nama pengguna melalui kolom name menggunakan where:
+
+```
+mutation MyMutation {
+  update_users(where: {name: {_eq: "sari"}}, _set: {name: "Sari Ayu"}) {
+    returning {
+      id
+      email
+      name
+    }
   }
 }
 ```
 Hasil Output:
 
-![image](https://github.com/user-attachments/assets/b1f47924-6075-4484-8d1c-a68032674c67)
+![image](https://github.com/user-attachments/assets/bf7151d2-da54-42db-a431-92f6382bfa78)
 
-Dapat juga melakukan pengambilan satu Emiten Saham (Get Single Data):
+![image](https://github.com/user-attachments/assets/18642619-36c6-4f1b-916f-e40a8baf04ce)
 
-Ini mengambil satu saham berdasarkan ID
+3. Update email melalui kolom email menggunakan where:
 
 ```
-query {
-  stocks(where: {id: {_eq: 5}}) {
+mutation updateUserByEmail {
+  update_users(
+    where: { email: { _eq: "joni@example.com" } },  # Kondisi untuk memilih berdasarkan email
+    _set: { email: "updatedjoni@example.com" }  # Data yang di-update
+  ) {
+    affected_rows
+    returning {
+      id
+      name
+      email
+    }
+  }
+}
+```
+4. Update Data dalam graphql
+
+```
+mutation updateUser {
+  update_users_by_pk(pk_columns: {id: 6}, _set: {name: "Sari Ayu", email: "sariayu@gmail.com"}) {
     id
-    emiten_name
-    stock_symbol
-    stock_price
-    quantity
-    total_price
-    created_at
+    name
+    email
+  }
+}
+```
+
+# Menghapus data pengguna
+
+Untuk melakukan delete data pengguna dapat mengdelete menggunakan mutation:
+
+1. Delete berdasarkan id
+
+```
+mutation deleteUserByID {
+  delete_users(where: {id: {_eq: 6}}) {
+    affected_rows
+    returning {
+      id
+      name
+      email
+    }
+  }
+}
+```
+2. Delete berdasarkan name
+
+```
+mutation insertUsers {
+  delete_users(where: {name: {_eq: "Dewi"}}) {
+    returning {
+      email
+      id
+      name
+    }
+  }
+}
+
+```
+Hasil Output:
+
+![image](https://github.com/user-attachments/assets/69e6776b-504a-443b-b0c0-4c8613f023cf)
+
+3. Delete berdasarkan email
+
+```
+mutation deleteUserByEmail {
+  delete_users(where: {email: {_eq: "sari@gmail.com"}}) {
+    affected_rows
+    returning {
+      id
+      name
+      email
+    }
+  }
+}
+```
+# Menampilkan data pengguna menggunakan query where 
+
+1. Memfilter berdasarkan id:
+
+```
+query getUserById {
+  users(where: {id: {_eq: 1}}) {
+    id
+    name
+    email
+  }
+}
+```
+2. Memfilter berdasarkan nama:
+
+```
+query MyQuery {
+  users(where: {name: {_eq: "Sarah"}}) {
+    id
+    name
+    email
   }
 }
 ```
 Hasil Output:
 
-![image](https://github.com/user-attachments/assets/66530ed7-b2ff-456b-93c0-37680efe7f4b)
+![image](https://github.com/user-attachments/assets/e4c2835b-861a-4536-bc43-51be9a3e617e)
 
-![image](https://github.com/user-attachments/assets/ff5bf409-fca3-4c5c-8cd0-c8eac8b7eb78)
+3. Memfilter berdasarkan email:
+
+```
+query getUserByEmail {
+  users(where: {email: {_eq: "joni@example.com"}}) {
+    id
+    name
+    email
+  }
+}
+```
+
+# Operator Like di Graphql
+
+Di GraphQL, untuk melakukan pencarian yang mirip dengan SQL LIKE, dapat menggunakan operator pencocokan string seperti _ilike atau _like. Operator ini memungkinkan untuk melakukan pencarian berdasarkan pola tertentu dalam data string.
+
+_like: Menggunakan pola pencocokan yang case-sensitive (sensitif terhadap huruf besar/kecil).
+
+_ilike: Menggunakan pola pencocokan yang case-insensitive (tidak sensitif terhadap huruf besar/kecil).
+
+1. Mencari Nama yang Mengandung Substring Tertentu
+
+Misalkan ingin mencari pengguna yang nama depannya mengandung substring "Joni". bisa menggunakan operator _like atau _ilike untuk mencapainya.
+
+Query GraphQL untuk Mencari Nama yang Mengandung "Joni" (Case-Insensitive):
+
+```
+query MyQuery {
+  users(where: {name: {_ilike: "%Ayu%"}}) {
+    email
+    id
+    name
+  }
+}
+```
+Hasil Output:
+
+![image](https://github.com/user-attachments/assets/e71e95b1-480f-4f22-b25e-759cca3965e9)
+
+2. Memfilter nama menggunakan operator like dan relasi dalam tabel order
+
+```
+query MyQuery {
+  users(where: {name: {_ilike: "%ayu%"}}) {
+    id
+    name
+    email
+    orders {
+      id
+      user_id
+      stock_id
+      order_type
+      order_quantity
+      order_price
+      created_at
+    }
+  }
+}
+```
+Hasi Output:
+
+![image](https://github.com/user-attachments/assets/cd83a827-d51e-4537-8d6f-687b2fdf6d6f)
+
+# Query untuk relasi
+
+disini saya akan menggunakan query untuk relasi antar tabel. tabel order ini digunakan untuk menampilkan data yang terkait dengan tabel users.
+
+tabel orders memiliki user_id yang merupakan foreign key yang terhubung ke kolom id di tabel users. Dengan relasi tersebut, kita dapat menampilkan data dari tabel orders dan data pengguna terkait dari tabel users.
+
+1. Query untuk Relasi Tabel orders dan users
+
+menampilkan data dari tabel orders serta data terkait dari tabel users:
+
+```
+query MyQuery {
+  orders {
+    id
+    user_id
+    stock_id
+    order_type
+    order_quantity
+    order_price
+    created_at
+    user {
+      id
+      name
+      email
+    }
+  }
+}
+```
+Hasil Output:
+
+![image](https://github.com/user-attachments/assets/d3bda06e-1c92-4925-a37d-132498d85c79)
+
+Penjelasan:
+
+orders: Query ini menargetkan tabel orders.
+
+user {}: Bagian ini mendefinisikan relasi ke tabel users melalui foreign key user_id. Di sini mengambil kolom id, name, dan email dari tabel users.
+
+2. Query dengan Kondisi WHERE
+
+Jika ingin melakukan filter data berdasarkan kolom tertentu, misalnya  hanya ingin menampilkan order dari pengguna tertentu, bisa dapat menggunakan filter where. Misalnya, menampilkan semua order yang dimiliki pengguna dengan name yang mengandung "Ayu":
+
+```
+query MyQuery {
+  orders(where: {user: {name: {_ilike: "%ayu%"}}}) {
+    id
+    user_id
+    stock_id
+    order_type
+    order_quantity
+    order_price
+    created_at
+    user {
+      id
+      name
+      email
+    }
+  }
+}
+```
+Hasil Output:
+
+![image](https://github.com/user-attachments/assets/bcb7d572-8b1b-4b55-aa04-9be54672df09)
+
+where: {user: {name: {_like: "%ayu%"}}}: Bagian ini memfilter order berdasarkan nama pengguna yang mengandung "Ayu". Di sini kita memanfaatkan relasi antara orders dan users untuk melakukan filter.
+
+3. Query dengan Kondisi order_type
+
+Jika ingin menampilkan semua order yang memiliki order_type tertentu, misalnya hanya order dengan tipe "buy", dapat melakukan hal ini:
+
+```
+query MyQuery {
+  orders(where: {order_type: {_eq: "BUY"}}) {
+    id
+    user_id
+    stock_id
+    order_type
+    order_quantity
+    order_price
+    created_at
+    user {
+      id
+      name
+      email
+    }
+  }
+}
+```
+Hasil Output:
+
+![image](https://github.com/user-attachments/assets/92008858-e2e3-41b7-9e7b-e78a713ababc)
+
+query tersebut menampilkan data order beserta data pengguna dari kolom order_type
+
+4. Query dengan Relasi ke Tabel users dan Tabel stocks
+   
+Jika memiliki relasi ke tabel stocks melalui stock_id di tabel orders, bisa memperluas query untuk menampilkan data saham yang diorder.
+
+```
+query MyQuery {
+  orders {
+    id
+    user_id
+    stock_id
+    order_type
+    order_quantity
+    order_price
+    created_at
+    user {
+      id
+      name
+      email
+    }
+    stock {
+      id
+      emiten_name
+      stock_symbol
+      stock_price
+      quantity
+      total_price
+      created_at
+    }
+  }
+}
+```
+Hasil Output: 
+
+![image](https://github.com/user-attachments/assets/72d3c6fc-1683-489b-834d-d9e9c95548ec)
+
+stock {}: Relasi ke tabel stocks menggunakan foreign key stock_id. Kita bisa menampilkan informasi terkait saham seperti emiten_name, stock_symbol, stock_price, quantity, total_price, dan created_at.
 
 # User melakukan order untuk membeli atau menjual saham
 
@@ -375,6 +715,44 @@ mutation {
 Hasil Output:
 
 ![image](https://github.com/user-attachments/assets/fccdfdbe-6044-4d59-9079-ac05f4ceff7f)
+
+# affected rows
+
+Penggunaan affected_rows dalam GraphQL pada Hasura bertujuan untuk menunjukkan jumlah baris yang terpengaruh oleh operasi mutation seperti insert, update, atau delete. Ini sangat berguna untuk memverifikasi apakah operasi berhasil dan mengetahui berapa banyak baris yang diubah dalam proses tersebut.
+
+Berikut adalah beberapa contoh penggunaan affected_rows di Hasura:
+
+1. Penggunaan Affected rows dalam 1 baris , pada mutation insert
+
+```
+mutation insertUsers {
+  insert_users(objects: 
+    {id: 9, name: "Rama", email: "rama@gmail.com"}) {
+    affected_rows
+  }
+}
+```
+Hasil output :
+
+![image](https://github.com/user-attachments/assets/d6472afa-bf4d-43c9-8aaa-8ac088c7a759)
+
+![image](https://github.com/user-attachments/assets/9f3a968f-666f-4d7a-8d8c-87f5f1f38e68)
+
+2. Penggunaan Affected rows dalam 2 baris , pada mutation insert
+
+```
+mutation insertUsers {
+  insert_users(objects: [
+    {id:7, name: "Sarah", email: "sarah@gmail.com"},
+    {id:8, name: "Dewi", email: "dewi@gmail.com"}
+  ]) {
+    affected_rows
+  }
+}
+```
+Hasil output :
+
+![image](https://github.com/user-attachments/assets/4774b5c2-240e-4993-b563-ef136e37ca56)
 
 
 
