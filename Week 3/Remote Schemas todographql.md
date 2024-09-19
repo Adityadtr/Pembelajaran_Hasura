@@ -1,39 +1,3 @@
-# Integrasi Remote Schemas todos di HASURA
-
-Pada Hasura console, klik tab remote schemas terlebih dahulu:
-
-![image](https://github.com/user-attachments/assets/d2e72068-423b-43f2-8b53-2d57066731c7)
-
-Setelah itu, klik add untuk menambahkan remote schemas:
-
-![image](https://github.com/user-attachments/assets/4634f296-e393-499d-9e0b-28d8ccf35331)
-
-Terlihat beberapa isian detail untuk kita remote, masukkan endpoint pertama terlebih dahulu yaitu : http://10.100.14.10:8989/query
-
-![image](https://github.com/user-attachments/assets/1aea3ca2-d6d6-4144-9712-ab0e3e0552de)
-
-isilah :
-
-Remote Schema Name : todosGraphQL 
-
-GraphQL Service URL : http://10.100.14.10:8989/query
-
-Tetapi ada eror, dikarenakan field di hasura schemas saya memiliki field users yang sama dengan hasura schemas todographql, maka dapat memberikan penambahan root fields namespace nya:
-
-dengan mengklik graphql customizations dan isi root fields namespacesnya: 
-
-![image](https://github.com/user-attachments/assets/72e785d5-f006-4ae7-a965-f02b2fea4641)
-
-isilah : 
-
-root fields namespaces: todosRemote
-
-Kemudian save dengan mengeklik add remote schema:
-
-![image](https://github.com/user-attachments/assets/8a4bb55d-a9b2-421f-ba74-38c811e040de)
-
-schemas todosGraphQL berhasil di remote 
-
 # Tabel pada schemas todographql
 
 1. Tabel todos: adalah tabel yang berisi daftar tugas (to-do items) dalam sebuah aplikasi
