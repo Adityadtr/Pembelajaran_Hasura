@@ -47,18 +47,17 @@ Subfields:
 Query dalam graphql di postman:
 
 ```
-query {
+query MyQuery {
   findAllAuthors {
     id
     name
     age
   }
 }
-
 ```
 Hasil Output:
 
-![image](https://github.com/user-attachments/assets/416acc3b-dc9d-419c-a67c-0c07c16ad4aa)
+![image](https://github.com/user-attachments/assets/539b2e8e-e9a3-4a50-80e7-837685a91a92)
 
 Penjelasan Output:
 
@@ -79,7 +78,7 @@ Subfields:
 Query dalam graphql di postman:
 
 ```
-query {
+query MyQuery {
   findAllTutorials {
     id
     title
@@ -89,7 +88,7 @@ query {
 ```
 Hasil Output:
 
-![image](https://github.com/user-attachments/assets/1fa15fed-3dba-4f1a-a0b0-76b3899faa73)
+![image](https://github.com/user-attachments/assets/89113c8f-e0fe-4232-8819-ab69e3d71184)
 
 Penjelasan Output:
 
@@ -118,7 +117,7 @@ Subfields:
 Query dalam graphql di postman:
 
 ```
-query {
+query MyQuery {
   findAllTutorials {
     id
     title
@@ -133,7 +132,7 @@ query {
 ```
 Hasil Output:
 
-![image](https://github.com/user-attachments/assets/cf429e2b-da43-4878-91e4-721766acf91b)
+![image](https://github.com/user-attachments/assets/20d6e772-64e8-4c13-96f3-cf79f601dea1)
 
 Penjelasan Output:
 
@@ -146,13 +145,13 @@ Query `countAuthors `: Query ini digunakan untuk menghitung jumlah total authors
 Query dalam graphql di postman:
 
 ```
-{
+query MyQuery {
   countAuthors
 }
 ```
 Hasil Output:
 
-![image](https://github.com/user-attachments/assets/0ccdc6d9-31e8-4fb7-ad37-816c39ca0992)
+![image](https://github.com/user-attachments/assets/a9a6928a-f095-4565-9e73-2bdc4dfffe45)
 
 Penjelasan Output:
 
@@ -171,7 +170,7 @@ Query dalam graphql di postman:
 ```
 Hasil Output:
 
-![image](https://github.com/user-attachments/assets/c49106d8-bcdb-40c3-9f1e-b4ea4f2e4cff)
+![image](https://github.com/user-attachments/assets/97f8c979-67aa-41f3-9ce8-f4d08dc9db98)
 
 Penjelasan Output:
 
