@@ -1,29 +1,3 @@
-# Integrasi Remote Schemas springboot di HASURA
-
-Pada Hasura console, klik tab remote schemas terlebih dahulu:
-
-![image](https://github.com/user-attachments/assets/d2e72068-423b-43f2-8b53-2d57066731c7)
-
-Setelah itu, klik add untuk menambahkan remote schemas:
-
-![image](https://github.com/user-attachments/assets/4634f296-e393-499d-9e0b-28d8ccf35331)
-
-Terlihat beberapa isian detail untuk kita remote, masukkan endpoint kedua terlebih dahulu yaitu : http://10.100.13.24:8088/apis/graphql
-
-![image](https://github.com/user-attachments/assets/ec3bb4d8-757e-4260-a51c-6b10c79c2f85)
-
-isilah :
-
-Remote Schema Name : springbootGraphQL 
-
-GraphQL Service URL : http://10.100.13.24:8088/apis/graphql
-
-Kemudian save dengan mengeklik add remote schema:
-
-![image](https://github.com/user-attachments/assets/2fff7ed7-5fd4-444d-97df-dab2acb0d972)
-
-schemas springbootGraphQL berhasil di remote 
-
 # Tabel pada schemas springbootgraphql
 
 1. Tabel authors: adalah tabel yang berisi informasi tentang penulis
