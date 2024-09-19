@@ -165,3 +165,40 @@ Penjelasan Output:
 
 Query ini mengembalikan semua tutorial yang tersimpan dalam tabel Tutorials, dengan informasi terkait masing-masing tutorial dan data penulisnya.
 
+4. Query countAuthors 
+
+Query `countAuthors `: Query ini digunakan untuk menghitung jumlah total authors yang ada di dalam database.
+
+Query dalam graphql di postman:
+
+```
+{
+  countAuthors
+}
+```
+Hasil Output:
+
+![image](https://github.com/user-attachments/assets/0ccdc6d9-31e8-4fb7-ad37-816c39ca0992)
+
+Penjelasan Output:
+
+Output menunjukkan bahwa jumlah total author di dalam database adalah 1. Ini artinya ada 1 author yang terdaftar dalam sistem.
+
+5. Query countTutorials
+
+Query `countTutorials `: Query ini digunakan untuk menghitung jumlah total tutorials yang ada di dalam database.
+
+Query dalam graphql di postman:
+
+```
+{
+  countTutorials
+}
+```
+Hasil Output:
+
+![image](https://github.com/user-attachments/assets/c49106d8-bcdb-40c3-9f1e-b4ea4f2e4cff)
+
+Penjelasan Output:
+
+Output menunjukkan bahwa jumlah total tutorial di dalam database adalah 2. Jadi, terdapat 2 tutorial yang disimpan dalam sistem.
