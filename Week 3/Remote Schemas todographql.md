@@ -77,21 +77,24 @@ Subfields:
 Query dalam graphql di postman:
 
 ```
-{
-  todos {
-    id
-    text
-    done
-    user {
+query MyQuery {
+  todosRemote {
+    todos {
       id
-      name
+      text
+      done
+      user {
+        id
+        name
+      }
     }
   }
 }
+
 ```
 Hasil Output:
 
-![image](https://github.com/user-attachments/assets/b0399e19-bfdb-427c-bed4-bf9c33e07940)
+![image](https://github.com/user-attachments/assets/a504e886-32e1-4f77-99a6-f478361790de)
 
 Penjelasan Output:
 
@@ -122,21 +125,23 @@ Subfields:
 Query dalam graphql di postman:
 
 ```
-{
-    todo(id: 1) {
+query MyQuery {
+  todosRemote {
+    todo(id: "1") {
       id
-      done
       text
+      done
       user {
         id
         name
       }
     }
   }
+}
 ```
 Hasil Output:
 
-![image](https://github.com/user-attachments/assets/4ef11b77-4913-425b-809f-d1f24c13aeda)
+![image](https://github.com/user-attachments/assets/cf5ffe4b-7854-4fb9-b09f-716b931f681b)
 
 Penjelasan Output:
 
@@ -155,17 +160,18 @@ Subfields:
 Query dalam graphql di postman:
 
 ```
-{
-  users {
-    id
-    name
+query MyQuery {
+  todosRemote {
+    users {
+      id
+      name
+    }
   }
 }
-
 ```
 Hasil Output:
 
-![image](https://github.com/user-attachments/assets/85e8d495-0908-4b67-a399-f07d4425cdd4)
+![image](https://github.com/user-attachments/assets/3fcaf3c1-6a1a-483a-9547-0c0e510f5c51)
 
 Penjelasan Output:
 
@@ -188,16 +194,18 @@ Subfields:
 Query dalam graphql di postman:
 
 ```
-{
+query MyQuery {
+  todosRemote {
     user(id: "1") {
       id
       name
     }
   }
+}
 ```
 Hasil Output:
 
-![image](https://github.com/user-attachments/assets/273aac63-2568-4f07-a7df-0c34bc7ea991)
+![image](https://github.com/user-attachments/assets/116e6ac5-3516-4c60-bf42-632ec0a68bf4)
 
 Penjelasan Output:
 
