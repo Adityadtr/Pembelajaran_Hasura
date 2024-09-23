@@ -77,7 +77,7 @@ Subfields:
 Query dalam graphql di postman:
 
 ```
-query MyQuery {
+query todos {
   todosRemote {
     todos {
       id
@@ -125,7 +125,7 @@ Subfields:
 Query dalam graphql di postman:
 
 ```
-query MyQuery {
+query todo {
   todosRemote {
     todo(id: "1") {
       id
@@ -160,7 +160,7 @@ Subfields:
 Query dalam graphql di postman:
 
 ```
-query MyQuery {
+query users {
   todosRemote {
     users {
       id
@@ -194,7 +194,7 @@ Subfields:
 Query dalam graphql di postman:
 
 ```
-query MyQuery {
+query user {
   todosRemote {
     user(id: "1") {
       id
