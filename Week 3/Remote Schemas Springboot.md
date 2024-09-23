@@ -47,7 +47,7 @@ Subfields:
 Query dalam graphql di postman:
 
 ```
-query MyQuery {
+query findAllAuthors {
   findAllAuthors {
     id
     name
@@ -78,7 +78,7 @@ Subfields:
 Query dalam graphql di postman:
 
 ```
-query MyQuery {
+query findAllTutorials {
   findAllTutorials {
     id
     title
@@ -117,7 +117,7 @@ Subfields:
 Query dalam graphql di postman:
 
 ```
-query MyQuery {
+query findAllTutorials {
   findAllTutorials {
     id
     title
