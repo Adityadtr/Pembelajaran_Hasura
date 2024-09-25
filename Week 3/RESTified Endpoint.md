@@ -118,13 +118,19 @@ Kemudian, saya jalankan REST tersebut di postman dengan menggunakan metode reque
 
 - query get todo : (where dan join)
 
+  query ini mengambil satu tugas (todo item) berdasarkan ID yang diberikan sebagai argumen.
+
   ![image](https://github.com/user-attachments/assets/646d2065-2c2f-4178-81c3-8f7ca9e6c7af)
 
 - query get users
 
+query ini mengambil semua pengguna yang ada di database.
+
 ![image](https://github.com/user-attachments/assets/4fe66481-2aeb-43b8-9cca-434b957a86c9)
 
 - query get user (where)
+
+query ini mengambil satu pengguna (user) berdasarkan ID yang diberikan sebagai argumen.
 
 ![image](https://github.com/user-attachments/assets/f23f8445-5058-40cd-a480-accaaec92954)
 
