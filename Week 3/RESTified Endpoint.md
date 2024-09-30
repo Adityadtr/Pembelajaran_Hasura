@@ -134,8 +134,73 @@ query ini mengambil satu pengguna (user) berdasarkan ID yang diberikan sebagai a
 
 ![image](https://github.com/user-attachments/assets/f23f8445-5058-40cd-a480-accaaec92954)
 
+# REST Endpoint Query Get To do by id
 
-   
+Saya akan membuat REST Endpoint pada query ``getTodoById`` ddan menjalankan di postman, dengan melakukan:
+
+1. Membuka tab REST disamping kanan graphql terlebih dahulu, lalu terlihat form create REST Endpoint
+
+   ![image](https://github.com/user-attachments/assets/9dc39035-77bb-4ee6-bc77-5adba8e1b496)
+
+2. Selanjutnya, isi kolom Graphql Request dengan query ``getTodoById`` dengan perintah:
+
+   ```
+query getTodoById($id: ID!) {
+  todosRemote {
+    todo(id: $id) {
+      id
+      text
+      done
+      user {
+        id
+        name
+      }
+    }
+  }
+}
+```
+   Hasil Output:
+
+   ![image](https://github.com/user-attachments/assets/ffa0e988-eb6e-4839-867a-c716a91f4610)
+
+3. Kemudian, isikan Name, description, URL Path, dan Methods
+
+   Name: getTodoById
+
+   URL Path: http:/10.100.14.8:8083/api/rest/gettodobyid
+
+   Methods: GET
+
+   ![image](https://github.com/user-attachments/assets/83f02d97-3146-4627-aa21-55413f3ec96e)
+
+4. Setelah isian sudah selesain diisi kemudian klik create untuk proses membuatnya, dan hasil REST Endpoint ``getTodoById`` sudah selesai dibuat
+
+   ![image](https://github.com/user-attachments/assets/02dfe574-c4ed-4404-9d04-d2432affd98a)
+
+5. Setelah REST endpoint dibuat, buka aplikasi postman dan masukan URL Path REST ``getTodoById`` di kolom url.
+
+   ![image](https://github.com/user-attachments/assets/bd128891-8548-4833-b0fb-b4f4e8209544)
+
+6. Kemudian dapat menjalankan REST tersebut dengan 2 cara, yaitu:
+
+   - Pertama dapat menjalankan melalui URL Path nya:
+
+     Dengan melakukan get ``http://10.100.14.8:8083/api/rest/gettodobyid?id=1`` kemudian klik send
+
+     Hasil Output:
+
+     ![image](https://github.com/user-attachments/assets/047b578c-5dbe-4ab7-b26d-cf12735d3e25)
+
+     Penjelasan: menggunakan parameter id=1, maka output tersebut menampilkan data dalam id 1
+
+     ![image](https://github.com/user-attachments/assets/37f94240-e00d-4cdd-bf5f-18f89f2b4418)
+
+     Penjelasan: menggunakan parameter id=2, maka output tersebut menampilkan "message": "record not found", karena database pad todographql hanya ada 1 data saja.
+
+
+
+
+
 
 
 
