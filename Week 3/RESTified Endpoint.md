@@ -144,7 +144,7 @@ Saya akan membuat REST Endpoint pada query ``getTodoById`` ddan menjalankan di p
 
 2. Selanjutnya, isi kolom Graphql Request dengan query ``getTodoById`` dengan perintah:
 
-   ```
+```
 query getTodoById($id: ID!) {
   todosRemote {
     todo(id: $id) {
