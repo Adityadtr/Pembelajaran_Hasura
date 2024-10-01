@@ -197,6 +197,27 @@ query getTodoById($id: ID!) {
 
      Penjelasan: menggunakan parameter id=2, maka output tersebut menampilkan "message": "record not found", karena database pad todographql hanya ada 1 data saja.
 
+   - Kedua dapat menjalankan di body request dalam format JSON:
+
+     Masukan parameter variable id nya di kolom raw dibagian body reques. dan masukan parameter id nya:
+
+```
+{
+  "id": "1"
+}
+```
+Hasil Output untuk parameter id : 1, dan hasil data dapat terlihat
+
+![image](https://github.com/user-attachments/assets/f5d07b06-bbb9-4528-992d-12632b1c232a)
+
+```
+{
+  "id": "2"
+}
+```
+Hasil Output untuk parameter id : 2, dan hasil nya menampilkan pesan: record not found, dikarenakan data pada database hanya ada 1 data di id:1
+
+![image](https://github.com/user-attachments/assets/8a591269-c0c6-4079-ac03-df6175002ef1)
 
 
 
