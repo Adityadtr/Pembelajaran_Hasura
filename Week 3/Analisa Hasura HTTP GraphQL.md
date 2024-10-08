@@ -99,3 +99,83 @@ C. General Metrics : memiliki 4 panel
    
    - Arti: Menampilkan jumlah data yang ditransfer melalui action.
    - Kegunaan: Ini membantu memantau performa action yang mungkin digunakan dalam aplikasi. Banyaknya data yang diproses oleh action bisa menunjukkan seberapa sering mereka dipanggil dan seberapa intensif penggunaannya.
+
+# Menu titik di pojok kanan atas panel
+
+Setiap panel di Grafana memiliki menu dengan ikon tiga titik di pojok kanan atas. Berikut adalah fungsi-fungsi yang terdapat di dalamnya:
+
+![image](https://github.com/user-attachments/assets/cb3ef02c-8e40-4509-af3e-e058dbe1335f)
+
+
+1. **View**:
+
+   ![image](https://github.com/user-attachments/assets/b652b12a-83f2-472d-aa68-3b387265ee08)
+
+   - Arti: Membuka panel dalam mode layar penuh untuk melihat lebih jelas tanpa gangguan dari panel lain.
+
+   - Kegunaan: Berguna ketika Anda ingin fokus pada satu panel spesifik atau melakukan analisis mendalam pada data yang ditampilkan.
+
+2. **Edit**:
+
+   ![image](https://github.com/user-attachments/assets/e1424640-7580-470b-ae08-340b2645f3e8)
+
+   - Arti: Membuka pengaturan panel di mode edit, di mana dapat mengubah query, visualisasi, dan pengaturan lainnya.
+
+   - Kegunaan: Berguna untuk melakukan perubahan pada data yang ditampilkan atau cara data tersebut divisualisasikan.
+
+3. **Share**:
+
+   ![image](https://github.com/user-attachments/assets/3fbf0c5c-fb68-4cff-aadc-a568f8280f96)
+
+   - Arti: Membagikan tautan ke panel atau mengekspor data dari panel dalam format gambar atau CSV.
+
+   - Kegunaan: Berguna ketika ingin berbagi visualisasi atau data dengan orang lain, baik dalam tim maupun di luar Grafana.
+
+4. **Explore**:
+
+   ![image](https://github.com/user-attachments/assets/e58caa96-1582-4334-b5b3-e97d35a695a1)
+
+   - Arti: Memasukkan data panel ke dalam mode eksplorasi, di mana dapat melihat data secara mendetail dan mengujinya lebih lanjut.
+
+   - Kegunaan: Berguna untuk debugging atau investigasi mendalam terhadap data atau query yang digunakan di panel.
+
+5. **Inspect (Data, Query, Panel JSON)**:
+
+   ![image](https://github.com/user-attachments/assets/afcee971-ccc1-4409-a3ec-85948c3ad89d)
+
+   - Data: Menampilkan data mentah yang digunakan di panel, baik dalam bentuk tabel atau JSON.
+
+   - Query: Memperlihatkan query yang digunakan untuk mendapatkan data di panel.
+
+   - Panel JSON: Memperlihatkan konfigurasi panel dalam format JSON.
+
+6. **More (Duplicate, Copy, Create)**:
+
+   ![image](https://github.com/user-attachments/assets/16f4e0a2-2de0-4437-91d5-f781f7bcd8bb)
+
+   - Duplicate:
+     
+     Arti: Membuat salinan dari panel saat ini dengan semua konfigurasi yang sama, termasuk query, visualisasi, dan pengaturan lainnya.
+
+     Kegunaan: Berguna saat anda ingin membuat panel baru yang sangat mirip dengan yang ada, tetapi dengan beberapa perubahan kecil.
+
+   - Copy:
+     
+     Arti: Menyalin konfigurasi panel ke clipboard.
+
+     Kegunaan: Berguna jika Anda ingin menempelkan konfigurasi panel di tempat lain, seperti dalam JSON untuk pengeditan manual atau jika Anda ingin memindahkan panel ini ke dashboard lain.
+     
+   - Create:
+     
+     Arti: Biasanya ini mengacu pada opsi untuk membuat panel baru berdasarkan beberapa template atau fitur, meskipun fitur ini bisa berbeda tergantung pada versi Grafana.
+
+     Kegunaan: Digunakan saat Anda ingin memulai membuat panel baru dari awal, tetapi dengan dasar-dasar yang mungkin serupa dengan panel yang sedang Anda lihat,
+     atau dalam konteks pembuatan elemen baru berdasarkan data yang ada.
+
+7. **Remove**:
+
+   - Arti: Menghapus panel saat ini dari dashboard.
+
+   - Kegunaan: Fitur ini digunakan untuk menghapus panel yang tidak lagi dibutuhkan dari dashboard.
+   
+   **Noted: Perlu hati-hati saat menggunakan fitur ini karena jika panel dihapus, semua data dan konfigurasi terkait akan hilang dari dashboard, kecuali Anda memiliki cadangannya atau telah menduplikasi panel sebelumnya.**
