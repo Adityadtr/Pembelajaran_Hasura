@@ -49,8 +49,6 @@ A. Overview : memiliki 7 panel
 B. GraphQL Metrics : memiliki 6 panel
 
 1. Query Request Rate:
-
-   cache: penyimpanan sementara
    
    - Arti: Menampilkan laju (rate) request query per detik.
    - Kegunaan: Berguna untuk mengetahui seberapa sering query dikirimkan ke Hasura dalam waktu tertentu. Peningkatan signifikan bisa menjadi tanda lonjakan trafik atau beban tinggi.
@@ -88,7 +86,9 @@ C. General Metrics : memiliki 4 panel
    - Kegunaan: Berguna untuk memantau beban yang sedang dihadapi server dari sisi koneksi. Lonjakan jumlah koneksi bisa menjadi tanda meningkatnya beban atau potensi masalah jika kapasitas server terbatas.
      
 2. Cache Request Rate:
-   
+
+   cache: penyimpanan sementara. dan memakai nya pakai redis.
+
    - Arti: Menunjukkan laju permintaan ke cache.
    - Kegunaan: Ini membantu melihat seberapa efektif cache digunakan. Tingkat penggunaan cache yang tinggi bisa meningkatkan performa, sementara tingkat rendah bisa menunjukkan bahwa cache tidak digunakan secara optimal.
      
