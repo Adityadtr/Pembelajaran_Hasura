@@ -11,7 +11,7 @@ Bertujuan untuk memantau berbagai aspek operasional penting dari server Hasura, 
 
    ![image](https://github.com/user-attachments/assets/c091bb68-d622-49ac-9cd9-9f6d0694f234)
 
-   - Arti: Panel ini menunjukkan status metadata di Hasura. Metadata di Hasura mencakup semua konfigurasi seperti permission, custom logic, remote schemas, dan event triggers. Status ini biasanya menampilkan apakah metadata berhasil dimuat, mengalami error, atau dalam status lain yang relevan.
+   - Arti: Panel ini menunjukkan status metadata di Hasura. Metadata di Hasura mencakup semua konfigurasi seperti permission, custom logic, remote schemas, dan event triggers. Status ini biasanya menampilkan apakah metadata berhasil dimuat, mengalami error, atau dalam status lain yang relevan(pending, loading).
 
    - Analisa: Dari panel status metadata menunjukkan **Consistent**, yang artinya bahwa konfigurasi metadata di Hasura telah dimuat dengan benar dan tidak ada inkonsistensi atau kesalahan yang terjadi.
 
