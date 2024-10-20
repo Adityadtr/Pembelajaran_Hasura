@@ -105,4 +105,31 @@ Ini memungkinkan aplikasi untuk mengakses berbagai sumber data dan layanan denga
 
 Supergraph dibuat otomatis ketika Anda menambahkan subgraph ke dalam proyek Hasura. Anda dapat mendefinisikan hubungan antara sumber data dan menerapkan kontrol akses yang mendetail untuk menghubungkan berbagai sumber data secara logis sesuai kebutuhan aplikasi Anda.
 
+# Before Hasura DDN
 
+Sebelum adanya Hasura Data Delivery Network (DDN), perusahaan yang sedang melakukan modernisasi menghadapi tantangan dalam menyajikan pengalaman digital secara cepat dan hemat biaya. Tim pengembangan produk sering kali terhambat karena harus menunggu tim backend untuk menyediakan akses data yang aman dan efisien. Akibatnya, banyak waktu dan upaya dihabiskan untuk:
+
+- Implementasi API Kustom Secara Manual: Tim pengembangan membutuhkan lebih banyak waktu dan sumber daya untuk membangun API sendiri untuk berbagai sumber data.
+- Penyebaran Berlebih Microservices: Karena banyaknya microservices yang harus diatur dan dihubungkan, manajemen dan orkestrasi menjadi sangat sulit.
+- Orkestrasi Kebijakan Keamanan: Setiap microservice dan API harus diatur dengan kebijakan keamanan yang spesifik, yang menyulitkan integrasi antar layanan.
+- Waktu Terbuang dan Inovasi Terhambat: Waktu yang seharusnya digunakan untuk inovasi produk malah terbuang untuk menyelesaikan masalah teknis dalam pengelolaan dan akses data.
+
+![image](https://github.com/user-attachments/assets/5fa2c308-0376-491e-90e5-30588a19ed21)
+
+## Penjelasan Gambar
+
+- Lapisan Aplikasi
+
+Terdiri dari berbagai aplikasi: Client Apps (web, mobile, desktop), Public APIs, dan Internal Apps. Semua aplikasi ini membutuhkan akses ke backend yang berisi produk API/microservices untuk mengambil data dan menjalankan logika bisnis. Setiap aplikasi bergantung pada API dan microservices yang terhubung ke sumber data.
+
+- Product API/Microservice
+
+Ini adalah lapisan yang menangani akses aplikasi ke data. Setiap API produk menghubungkan aplikasi ke microservice di bawahnya, yang secara khusus menangani permintaan data dan logika bisnis.
+
+- Data API/Microservice
+
+Berfungsi sebagai lapisan yang menghubungkan microservices produk dengan sumber data. Microservices ini berperan dalam pengaturan data, kebijakan keamanan, dan pengambilan data dari sumber yang relevan.
+
+- Data Source (Sumber Data)
+
+Ini adalah lapisan terakhir, yang menyimpan data yang digunakan oleh seluruh sistem. Setiap data source bisa berupa database, layanan cloud, atau penyimpanan data lainnya.
