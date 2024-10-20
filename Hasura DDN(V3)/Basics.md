@@ -133,3 +133,34 @@ Berfungsi sebagai lapisan yang menghubungkan microservices produk dengan sumber 
 - Data Source (Sumber Data)
 
 Ini adalah lapisan terakhir, yang menyimpan data yang digunakan oleh seluruh sistem. Setiap data source bisa berupa database, layanan cloud, atau penyimpanan data lainnya.
+
+# With Hasura DDN
+
+With Hasura DDN:
+
+- Pengurangan Kompleksitas: Dengan Supergraph dan konektor data Hasura, telah meminimalkan(mengurangi) kompleksitas kebutuhan untuk membangun API dan microservices secara manual.
+- Kolaborasi yang Lebih Baik: Tim backend dapat bekerja secara mandiri (independen) tanpa harus menunggu proses pengembangan API khusus
+- Data Tersentralisasi: Data dari berbagai sumber (data internal maupun eksternal)saling terhubung dan dapat diekspos melalui satu jalur terpadu dengan keamanan yang lebih baik.
+- Reliabilitas & Skalabilitas: Dengan infrastruktur yang didukung oleh Hasura DDN, sistem menjadi lebih scalable dan dapat diandalkan dengan latensi minimal dalam kebutuhan aplikasi yang tersebar secara global.
+
+![image](https://github.com/user-attachments/assets/4e07cf5a-03e8-4b0d-8b0a-c6a273165d09)
+
+## Penjelasan Gambar
+
+**Lapisan Aplikasi**
+
+- Aplikasi seperti Client Apps, Public APIs, dan Internal Apps sekarang terhubung langsung ke Supergraph yang ditenagai oleh Hasura.
+- Supergraph adalah lapisan yang menyatukan berbagai sumber data yang terhubung melalui Hasura, menyediakan akses langsung dan terintegrasi ke semua sumber data yang diperlukan oleh aplikasi.
+- Dengan adanya Hasura, aplikasi tidak perlu lagi bergantung pada microservice yang dibuat secara manual untuk mengakses data.
+
+**Connector**
+  
+- Konektor menghubungkan Hasura dengan berbagai sumber data seperti Data API/Microservice, Data Source, dan External Source.
+- Dengan konektor ini, data dari berbagai sumber dapat diakses dengan lebih mudah dan aman tanpa harus membangun API kustom atau microservices baru. Ini memungkinkan tim backend bekerja lebih efisien dan kolaboratif.
+
+## Kesimpulan
+
+Hasura DDN (Data Delivery Network)
+Hasura DDN bertindak sebagai pusat yang menghubungkan aplikasi dengan berbagai sumber data. Hasura mengelola semua konektivitas dan keamanan, memungkinkan akses data secara real-time dengan performa tinggi. Hasura juga memberikan Supergraph yang menyatukan berbagai sumber data menjadi satu entitas terpadu yang dapat diakses oleh semua aplikasi dan API publik atau internal.
+
+
