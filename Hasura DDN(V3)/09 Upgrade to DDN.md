@@ -9,7 +9,7 @@ Hasura Data Delivery Network (DDN) menawarkan cara baru untuk membangun aplikasi
 
 # Bagi Pengembang Individu
 
-Hasura DDN menyediakan hosting API gratis bagi pengembang individu yang bekerja pada proyek kecil atau hobi.
+Hasura DDN menyediakan hosting API gratis bagi pengembang individu yang bekerja pada proyek kecil.
 
 - **Sebelum**: Terbatas pada model metadata Hasura v2 yang terikat dengan PostgreSQL dan GraphQL, dengan tantangan infrastruktur server dan biaya.
 - **Sesudah**: Hasura DDN menangani hosting tanpa biaya, memberikan kemampuan untuk menambahkan logika bisnis dengan Typescript, Python, dan Go, serta menghilangkan masalah infrastruktur.
@@ -20,7 +20,7 @@ Tim kecil dapat memanfaatkan Hasura DDN untuk mempercepat proses pengembangan da
 - **Sebelum**: Hasura v2 menghambat proses deployment dan tidak ada kemampuan untuk preview atau rollback API.
 - **Sesudah**: Hasura DDN memungkinkan prototipe cepat dengan build immutable dan deployment yang lebih konsisten.
 
-**Untuk Tim Dewasa**:
+**Untuk Tim Besar**:
 Tim yang lebih besar dapat memanfaatkan Hasura DDN untuk menskalakan aplikasi dengan federasi bawaan dan lapisan akses data berbasis metadata, memungkinkan integrasi data tanpa perlu penulisan ulang yang signifikan.
 
 - **Sebelum**: Metadata monolitik Hasura v2 memperlambat kolaborasi dan integrasi sumber data baru.
