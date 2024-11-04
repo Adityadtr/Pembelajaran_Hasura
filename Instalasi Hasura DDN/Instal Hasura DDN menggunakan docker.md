@@ -25,6 +25,20 @@ Jika instalasi berhasil, Anda akan melihat output berupa nomor versi DDN CLI yan
 
 ### Install Docker
 
-Anda dapat menginstall docker dengan mengikuti panduan penginstalan di dokumentasi hasura atau di dokumentasi pembelajaran penulis Kemudian, instalasi docker hingga selesai
+- Anda dapat menginstall docker dengan mengikuti panduan penginstalan di dokumentasi hasura atau di dokumentasi pembelajaran https://github.com/Adityadtr/Pembelajaran_Hasura/blob/main/Week%201/Instalasi%20Hasura.md.
+- Kemudian, instalasi docker hingga selesai
+- setelah instalasi docker sudah selesai, verifikasi penginstalan menggunakan perintah ``docker --version``. perintah tersebut akan menunjukkan versi docker yang terinstall
+
+![image](https://github.com/user-attachments/assets/03c41c1c-c295-4ccc-bf06-d1fbd2ce0f77)
+
+### Install Docker Compose
+
+- Anda dapat menginstall docker-compose dengan mengikuti panduan penginstalan di dokumentasi hasura atau di dokumentasi pembelajaran https://github.com/Adityadtr/Pembelajaran_Hasura/blob/main/Week%201/Instalasi%20Hasura.md.
+- Kemudian, instalasi docker-compose hingga selesai
+- setelah instalasi docker-compose sudah selesai, verifikasi penginstalan menggunakan perintah ``docker compose version``. perintah tersebut akan menunjukkan versi docker yang terinstall
+
+![image](https://github.com/user-attachments/assets/e54fd563-65a4-4c06-85d8-ae7550beb137)
+
+
 
 
