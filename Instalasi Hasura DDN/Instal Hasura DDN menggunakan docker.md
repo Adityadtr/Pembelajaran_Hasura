@@ -114,8 +114,6 @@ contoh ip address saya 192.168.1.14 maka ip di link tersebut saya ubah dengan se
 
 # Inisialisasi Supergraf Baru di Direktori Baru
 
-# Inisialisasi Supergraf Baru di Direktori Baru
-
 ### Prasyarat
 
 - **DDN CLI** harus sudah terinstal di sistem Anda.
@@ -151,8 +149,6 @@ Keterangan:
 5. **Langkah Selanjutnya**
    Setelah inisialisasi selesai, Anda dapat melanjutkan untuk menambahkan *connector* dan melakukan introspeksi database, serta membangun dan menjalankan proyek supergraph Anda.
 
----
-
 ### Contoh Tampilan Struktur Direktori Setelah Inisialisasi
 
 Setelah Anda menyelesaikan langkah-langkah di atas, berikut adalah contoh tampilan struktur direktori proyek supergraph:
@@ -162,27 +158,61 @@ my_supergraph_project/
 ├── connectors/
 ├── supergraph.yaml
 ├── models/
-└── README.md
 ```
 
 - **connectors/** : Folder ini berisi konfigurasi untuk konektor yang terhubung ke berbagai sumber data.
 - **supergraph.yaml** : File utama untuk konfigurasi supergraph Anda.
 - **models/** : Folder ini akan berisi model data yang digunakan dalam proyek supergraph Anda.
-- **README.md** : (Opsional) Dokumentasi proyek.
 
-### Troubleshooting
+# Menghubungkan ke data (connect to data)
 
-- **Error**: `ERR Expected 1 argument "path-to-project-dir"; usage "ddn supergraph init <path-to-project-dir>"`
+Untuk memulai, inisialisasi konektor dengan perintah berikut:
 
-  Jika Anda menemui error ini, pastikan Anda memberikan argumen path yang sesuai, seperti `.` untuk direktori saat ini, atau nama direktori lain yang Anda inginkan.
+```
+ddn connector init my_connector -i
+```
 
----
+Penjelasan:
 
-Dengan mengikuti panduan di atas, Anda sekarang telah berhasil menginisialisasi proyek supergraph baru di direktori Anda dan siap untuk melanjutkan konfigurasi dan pengembangan lebih lanjut.
+- ddn connector init adalah perintah untuk menginisialisasi konektor baru.
+- my_connector adalah nama konektor yang akan Anda buat. Gantilah dengan nama yang sesuai dengan kebutuhan Anda.
+- -i adalah opsi interaktif yang memungkinkan Anda untuk memasukkan informasi konfigurasi selama proses inisialisasi.
 
----
+Setelah inisialisasi, Anda akan diminta untuk mengonfigurasi beberapa parameter penting. Beberapa parameter tersebut biasanya perlu diisi seperti, 
 
-Silakan menambahkan dokumentasi ini ke dalam file README.md atau dokumen di repositori GitHub Anda agar memudahkan tim dalam memahami proses inisialisasi supergraph.
+- Nama konektor/hub konektor
+- Port konektor
+- Enviroment variables: CONNECTION_URI,CLIENT_CERT, CLIENT_KEY, ROOT_CERT
+
+![image](https://github.com/user-attachments/assets/572e8c97-2668-4d38-a607-cc8812a7ebce)
+
+Gambar tersebut menunjukkan output dari inisialisasi konektor
+
+Berikut adalah penjelasan setiap bagian dari output tersebut:
+
+1. **Hub Connector**: Sistem mengidentifikasi bahwa konektor yang akan diinisialisasi adalah konektor PostgreSQL yang terhubung ke `hasura/postgres`.
+
+2. **Connector Port 9064**: Port default untuk koneksi konektor adalah 9064. Port ini biasanya digunakan oleh konektor untuk berkomunikasi dengan database.
+
+3. **Environment Variables**:
+   - **CONNECTION_URI**: URI koneksi PostgreSQL yang digunakan untuk menghubungkan ke database. Dalam contoh ini, URI yang digunakan adalah:
+     ```
+     postgresql://read_only_user:readonlyuser@35.236.11.122:5432/v3-docs-sample-app
+     ```
+     URI ini berisi nama pengguna, kata sandi, alamat IP, port, dan nama database.
+   - **CLIENT_CERT, CLIENT_KEY, ROOT_CERT**: Opsi untuk memasukkan sertifikat SSL klien dan sertifikat root jika diperlukan. Dalam output ini, nilai-nilai ini opsional dan tidak diisi (dilewatkan).
+
+4. **INFO Messages**:
+   - Sistem membuat berbagai file dan direktori yang terkait dengan konektor di direktori `app/connector/my_connector`, antara lain:
+     - `connector.yaml`: Konfigurasi utama untuk konektor.
+     - `compose.yaml`: File untuk Docker Compose jika konektor perlu dijalankan dalam container.
+     - `.ddnignore`: File ignore untuk mengabaikan file tertentu.
+     - `Dockerfile.my_connector`: Dockerfile khusus untuk konektor ini.
+     - `my_connector.html`: File metadata untuk konektor.
+   - **Environment Variables**: Koneksi URI dan variabel lainnya ditambahkan ke file `.env`.
+   - **Konektor Inisialisasi**: Konektor dengan nama `my_connector` berhasil diinisialisasi dalam subgraf yang disebut "app".
+
+
 
 
 
